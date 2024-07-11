@@ -1,0 +1,11 @@
+<app-product-form></app-product-form>
+
+<div class="d-flex flex-column-reverse" *ngIf="prodArr.length; else noProdsAvlbl">
+    <app-product-cards [getProduct]="prod" *ngFor=" let prod of prodArr"></app-product-cards>
+</div>
+
+<ng-template #noProdsAvlbl>
+    <p class="alert alert-warning">
+        No Products Data is Available !!!
+    </p>
+</ng-template>

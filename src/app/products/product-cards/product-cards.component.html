@@ -1,0 +1,27 @@
+<ng-container *ngIf="getProduct ; else noProdAvlbl">
+    <mat-card class="mb-4">
+        <mat-card-title class="mb-3">{{getProduct.pname}}</mat-card-title>
+        <mat-card-content>
+          <p class="mb-2">
+            The Product Name is <strong>{{getProduct.pname}}</strong> and product status is <strong>{{getProduct.pstatus}}</strong>
+          </p>
+          <p>
+            <strong> Details : {{getProduct.pdetails}}</strong>
+          </p>
+        </mat-card-content>
+
+        <mat-divider inset></mat-divider>
+        <mat-card-actions class="d-flex justify-content-between">
+            <button (click)="onProdStatusUpdate(productStatusEnum.InProgress)" mat-raised-button color="primary">In Progress</button>
+            <button (click)="onProdStatusUpdate(productStatusEnum.Dispached)" mat-raised-button color="primary">Dispached</button>
+          <button (click)="onProdStatusUpdate(productStatusEnum.Delivered)" mat-raised-button color="primary">Delivered</button>
+          <button (click)="onProdStatusUpdate(productStatusEnum.Canceled)" mat-raised-button color="primary">Canceled</button>
+        </mat-card-actions>
+      </mat-card>
+</ng-container>
+
+<ng-template #noProdAvlbl>
+    <p class="alert alert-warning">
+        No products Data is Available !!!
+    </p>
+</ng-template>

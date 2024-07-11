@@ -1,0 +1,16 @@
+<mat-card class="mb-4">
+     <mat-card-content>
+        <form #prodForm = 'ngForm' (ngSubmit)="onProductAdd()">
+            <mat-form-field class="w-100" appearance="fill">
+                <mat-label>Product Name</mat-label>
+                <input type="text"  name="pname" ngModel #pname="ngModel" matInput placeholder="Ihone 15">
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="fill">
+                <mat-label>Product Details</mat-label>
+                <textarea matInput name="pdetails"  ngModel #pdetails="ngModel"></textarea>
+            </mat-form-field>
+
+            <button mat-raised-button color="accent" class="btn btn-sm btn-block">Add Product</button>
+        </form>
+     </mat-card-content>
+</mat-card>
